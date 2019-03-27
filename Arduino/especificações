@@ -1,0 +1,27 @@
+ARDUINO				GPRS SHIELD
+reset					reseta o GPRS shield
+5v
+ground
+Vin						indica que a energia auxiliar está conectada
+6							modGSMPin on/off for 908 
+10						txPin
+11						rxPin
+
+
+
+
+
+Especificações
+
+Enviar os seguintes dados a cada T segundos:
+- latitude
+- longitude
+- RSSI
+- uma string qualquer
+
+Escutar porta de SMS para comandos enviados remotamente
+
+
+
+
+

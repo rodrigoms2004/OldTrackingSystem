@@ -1,0 +1,90 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-on-ubuntu-12-04
+https://www.mulesoft.com/tcat/tomcat-linux
+http://www.liquidweb.com/kb/how-to-install-apache-tomcat-8-on-ubuntu-12-04/
+http://www.mkyong.com/tomcat/tomcat-default-administrator-password/
+
+# Descompactar o arquivo 
+tar xvzf apache-tomcat-8.0.20.tar.gz 
+
+# copiar os dados do diretório para o /opt/tomcat
+sudo mkdir /opt/tomcat
+sudo mv apache-tomcat-8.0.20/*  /opt/tomcat/
+
+#adicionar os caminhos
+sudo nano ~/.bashrc
+
+export JAVA_HOME=/opt/jdk/jdk1.8.0_31
+export JRE_HOME=/opt/jdk/jdk1.8.0_31
+export CATALINA_HOME=/opt/tomcat
+
+# OBS: o JRE_HOME é o pulo do gato, parece redundante, mas é ele que faz o tomcat funcionar.
+
+#reiniciar o bash
+. ~/.bashrc
+
+# subir o serviço
+$CATALINA_HOME/bin/startup.sh
+Using CATALINA_BASE:   /home/tomcat
+Using CATALINA_HOME:   /home/tomcat
+Using CATALINA_TMPDIR: /home/tomcat/temp
+Using JRE_HOME:        /opt/jdk/jdk1.8.0_31/bin
+Using CLASSPATH:       /home/tomcat/bin/bootstrap.jar:/home/tomcat/bin/tomcat-juli.jar
+Tomcat started.
+
+# Parar e iniciar o servidor
+$CATALINA_HOME/bin/catalina.sh stop
+$CATALINA_HOME/bin/catalina.sh start
+
+
+# adicionar linhas ao arquivo tomcat-users.xml
+<role rolename="manager"/>
+<role rolename="admin"/>
+<role rolename="manager-gui"/>
+<user username="admin" password="admin" roles="admin,manager,manager-gui"/>
+
+
+# Criar um grupo para o tomcat
+$ sudo groupadd tomcat
+$ sudo useradd -s /sbin/nologin -g tomcat -d /opt/tomcat tomcat
+$ passwd tomcat
+
+Fazendo o tomcat iniciar automaticamente
+http://askubuntu.com/questions/223944/how-to-automatically-restart-tomcat7-on-system-reboots
+
+criar arquivo 
+sudo nano tomcat8.sh
+
+copiar os dados 
+#! /bin/sh
+# /etc/init.d/tomcat8.sh
+
+# The following part always gets executed.
+echo "This part always gets executed"
+
+# The following part carries out specific functions depending on arguments.
+case "$1" in
+  start)
+    echo "Starting Tomcat 8"
+		sh /opt/tomcat/bin/catalina.sh start
+    echo "Tomcat 8 is alive"
+    ;;
+  stop)
+    echo "Stopping Tomcat 8"
+    sh /opt/tomcat/bin/catalina.sh stop
+    echo "Tomcat 8 is dead"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/tomcat8.sh {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
+# tornar executavel e inicializavel no init.d
+# chmod 755 /etc/init.d/tomcat8.sh
+# update-rc.d tomcat8.sh defaults
+
+
+
+

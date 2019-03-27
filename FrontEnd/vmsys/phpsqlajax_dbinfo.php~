@@ -1,0 +1,7 @@
+<?php
+// DB data
+$username = "maps";
+$password = "cisco";
+$database = "maps";
+$db_host = "localhost";
+?>

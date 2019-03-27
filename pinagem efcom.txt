@@ -1,0 +1,10 @@
+pinos digitais
+11 TX
+10 RX
+06 power
+
+outros pinos
+Reset
+3.3
+GND
+Vin

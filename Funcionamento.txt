@@ -1,0 +1,39 @@
+Dados enviados pelo módulo
+
+1 - posição
+1.1 - Longitude e latitude
+1.2 - triangulação de ERB
+
+2 - potência do sinal
+2.1 - Escala RSSI (AT+CSQ)
+
+3 - status da bateria
+3.1 - temperatura em graus celsius
+3.2 - carga elétrica em miliampere-hora
+
+4 - identificação
+4.1 - IMEI
+4.2 - ICCID, número de SIMcard
+4.3 - número de série especifico
+
+5 - códigos de erro
+5.1 - GPRS
+5.1.1 - SIMcard presente ou não
+5.1.2 - Existe registro na rede ou não
+5.1.3 - Potência do sinal baixa
+5.1.4 - Testar attach GPRS
+5.1.5 - Testar contexto PDP
+
+5.2 - GPS 
+5.2.1 - Erros na busca por satélites
+	
+5.3 - Energia
+5.3.1 - módulo desconectado da energia principal
+5.3.2 - carga da bateria com menos de 10%
+5.3.3 - temperatura acima do especificado pelo fabricante
+
+5.4 - Intrusão
+5.4.1 - capa removida?
+5.4.2 - desconectado da geladeira?
+
+

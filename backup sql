@@ -1,0 +1,22 @@
+http://stackoverflow.com/questions/6682916/how-to-backup-a-single-table-in-a-mysql-database
+
+
+Dump
+
+mysqldump db_name table_name > table_name.sql
+Dumping from a remote database
+
+mysqldump -u <db_username> -h <db_host> -p db_name table_name > table_name.sql
+For further reference:
+
+http://www.abbeyworkshop.com/howto/lamp/MySQL_Export_Backup/index.html
+
+Restore
+
+mysql -u <user_name> -p db_name
+mysql> source <full_path>/table_name.sql
+or in one line
+
+mysql -u username -p db_name < /path/to/table_name.sql
+
+

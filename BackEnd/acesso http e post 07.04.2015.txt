@@ -1,0 +1,20 @@
+
+ACESSO GET
+http://54.232.230.116:7010/VMSYS_BackEnd/DataServlet?latitude=30.2345&longitude=50.5672&RSSI=30
+
+ACESSO POST
+http://54.232.230.116:7010/VMSYS_BackEnd/DataServlet
+
+ACESSO SOCKET 
+
+IP 54.232.230.116
+Porta TCP 5005
+
+String: latitude,longitude,RSSI
+Exemplo 49.549,54.223,10
+
+Servlet (não mexer)
+http://54.232.230.116:7010/VMSYS_BackEnd/SocketServlet
+
+
+http://www.easywayserver.com/blog/java-run-program-automatically-on-tomcat-startup/

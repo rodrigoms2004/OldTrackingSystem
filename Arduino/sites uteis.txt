@@ -1,0 +1,6 @@
+http://blog.iteadstudio.com/sim908-module-gpsgsm-starting-guide/
+
+http://www.cooking-hacks.com/documentation/tutorials/geolocation-tracker-gprs-gps-geoposition-sim908-arduino-raspberry-pi
+
+http://www.open-electronics.org/using-the-gsmgprs-gps-shield-call-examples/
+http://www.open-electronics.org/how-to-send-and-receive-sms-with-gsmgprs-gps-shield/

@@ -1,0 +1,19 @@
+http://arduino-er.blogspot.com.br/2014/08/arduino-ide-error-avrdude-seropen-cant.html
+
+avrdude: ser_open(): can't open device "/dev/ttyACM0": Permission denied
+ioctl("TIOCMGET"): Inappropriate ioctl for device
+
+To fix it, enter the command:
+sudo usermod -a -G dialout rodrigo
+sudo chmod a+rw /dev/ttyACM0
+
+
+
+
+http://playground.arduino.cc/Linux/Debian
+apt-get install ia32-libs
+
+
+
+Arduino no Ubuntu
+http://vishnuvarkala.blogspot.com.br/2012/07/arduino-ide-not-detecting-serial-port.html

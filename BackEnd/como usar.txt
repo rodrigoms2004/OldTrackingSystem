@@ -1,0 +1,5 @@
+Método Get
+http://54.94.172.223:8080/VMSYS_BackEnd/DataServlet?latitude=39.2345&longitude=24.5672&RSSI=30
+
+Método POST
+http://54.94.172.223:8080/VMSYS_BackEnd/DataServlet
